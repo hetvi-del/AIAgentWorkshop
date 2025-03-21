@@ -61,7 +61,7 @@ class GroqLLM:
     Handles API communication and response processing.
     """
     def __init__(self, model_name="deepseek-r1-distill-llama-70b"):
-        self.client = Groq(api_key="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")
+        self.client = Groq(api_key="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")
         self.model_name = model_name
     
     def __call__(self, prompt: Union[str, dict, List[Dict]]) -> str:
@@ -71,6 +71,7 @@ class GroqLLM:
             
             # Make API call to Groq
             completion = self.client.chat.completions.create(
+
                 model=self.model_name,
                 messages=[{
                     "role": "user",
